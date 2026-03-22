@@ -41,7 +41,7 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch(`${API_BASE}/Tickets`, {
+    fetch(`${API_BASE}/api/Tickets`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -70,7 +70,7 @@ function App() {
   function handleDelete(id) {
     if (!window.confirm("Biztos törlöd?")) return;
 
-    fetch(`${API_BASE}/Tickets/${id}`, {
+    fetch(`${API_BASE}/api/Tickets/${id}`, {
       method: "DELETE"
     })
         .then(res => {
@@ -81,7 +81,7 @@ function App() {
   }
 
   function handleNextStatus(id) {
-    fetch(`${API_BASE}/Tickets/${id}/status`, {
+    fetch(`${API_BASE}/api/Tickets/${id}/status`, {
       method: "PUT"
     })
         .then(res => {
